@@ -1,15 +1,25 @@
-
+import express from "express";
 import pg from "pg";
 
-const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
-app.set('view engine', 'ejs')
+const db = new pg.Client({
+    user: "postgres",
+    host: "localhost",
+    database: "Candy Store",
+    password: "Jordannguyen2004",
+    port: 5432,
+});
+db.connect();
 
-app.get('/', (req, res) => {
-    res.render('pages/index')
-})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+app.get("/", async (req, res) => {
+    res.render("pages/index.ejs");
+});
+
 app.listen(port, () => {
-    console.log(`App listening at port ${port}`)
-})
+    console.log(`Server running on port ${port}`);
+});
