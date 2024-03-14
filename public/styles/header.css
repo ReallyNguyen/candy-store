@@ -40,6 +40,17 @@ a {
         justify-content: space-between;
     }
 
+    .hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding: 2rem;
+        background-color: #BAE8DD;
+    }
+
     .links {
         display: none;
     }
