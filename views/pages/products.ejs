@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/products.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>Products</title>
+</head>
+
+<%- include('../partials/header') %>
+
+    <body>
+        <div class="container">
+            <h1>Shop All Candy</h1>
+            <div class="selects">
+                <select name="filter" class="filter">
+                    <option value="">Filter</option>
+                    <optgroup label="Price">
+                        <option value="low">$0-5</option>
+                        <option value="high">$6-10</option>
+                    </optgroup>
+                    <optgroup label="Availability">
+                        <option value="stock">In Stock</option>
+                    </optgroup>
+                </select>
+                <select name="sort" class="sort">
+                    <option value="">Sort</option>
+                    <option value="best">Best Selling</option>
+                    <option value="alphabetical">Alphabetical, A-Z</option>
+                    <option value="low">Price, low to high</option>
+                    <option value="high">Price, high to low</option>
+                </select>
+            </div>
+        </div>
+    </body>
+
+</html>
