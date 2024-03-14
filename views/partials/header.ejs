@@ -21,10 +21,23 @@
                 <img src="/assets/cart.svg" alt="cart" width="25" height="25" />
             </a>
         </div>
-        <div class="mobile">
+        <div class="mobile" onclick="handleMenu()">
             <img src="/assets/hamburger.svg" alt="hamburger menu icon" width="25" height="25" />
         </div>
+        <div id="openMenu" class="openMenu">
+            <a class="link" href="/">Home</a>
+            <a class="link" href="/products">Products</a>
+            <a class="link" href="/">Cart</a>
+        </div>
     </header>
+    <script>
+        function handleMenu() {
+            var menu = document.getElementById('openMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
 </body>
 
 </html>

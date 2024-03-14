@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     background-color: #FFFAF9;
     font-family: "Jua", sans-serif;
