@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/item.css" />
+    <title>Items Page</title>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src='../../public/assets/candy/Sour Patch Kids.jpg' />
+    </div>
+    <div class="item-info">
+        <div class="info">
+            <h1 class="header">Sour Patch Kids</h1>
+            <h2 class="price">$3.99</h2>
+        </div>
+        <div class="quantity-controls">
+            <button class="quant-btn" onclick="increment()">+</button>
+            <p class="counter"><span id="counter">0</span></p>
+            <button class="quant-btn" onclick="decrement()">-</button>
+        </div>
+        <h1 class="header">Description</h1>
+        <p class="descritpion">
+            Sour Patch Kids - First they're sour. Then they're sweet.
+            Sour Patch Kids are a fun, soft, and chewy candy for children and adults.
+            They are sweet and chewy and packed with Sour Patch pucker power.
+            Keep everyone satisfied when you bring all your favorite Kids to the party.
+        </p>
+        <button class="add-btn">
+            ADD TO CART
+        </button>
+    </div>
+
+    <script>
+        let counter = 0;
+
+        function increment() {
+            counter++;
+            document.getElementById('counter').innerText = counter;
+        }
+
+        function decrement() {
+            if (counter > 0) {
+                counter--;
+                document.getElementById('counter').innerText = counter;
+            }
+        }
+    </script>
+</body>
+
+</html>
