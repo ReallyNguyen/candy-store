@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Jua", sans-serif;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #BAE8DD;
+    margin-top: 80px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.header {
+    font-size: 20px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-input {
+    width: 185px;
+    height: 20px;
+    font-family: "Jua", sans-serif;
+    padding-top: 2px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 60px;
+    height: 25px;
+    margin-top: 10px;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: "Jua", sans-serif;
+}

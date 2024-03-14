@@ -17,7 +17,10 @@ body {
     border-radius: 10px;
     box-shadow: 3px 4px 8px grey;
     align-content: center;
-    margin-top: 90px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 180px;
+    margin-bottom: 20px;
 }
 
 .item-info {
