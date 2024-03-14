@@ -24,6 +24,10 @@ app.get("/products", async (req, res) => {
     res.render("pages/products.ejs");
 });
 
+app.get("/item", async (req, res) => {
+    res.render("pages/item.ejs");
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
