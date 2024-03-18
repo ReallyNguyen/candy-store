@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-container {
+    display: none;
+}
+
+.container {
+    background-color: #FFFAF9;
+    font-family: "Jua", sans-serif;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEFDDF;
+    min-height: 50vh;
+}
+
+.hero img {
+    margin-top: 5.5rem;
+    max-width: 100%;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFAF9;
+    min-height: 95vh;
+}
+
+.intro h1,
+.intro img,
+.arrivals h1,
+.testimonies h1 {
+    margin: 2rem 0;
+    font-size: 20px;
+}
+
+.intro p {
+    width: 70%;
+}
+
+.arrivals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEFDDF;
+    min-height: 60vh;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1rem;
+}
+
+.testimonies {
+    text-align: center;
+}
+
+.testimonies-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.hero-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EEFDDF;
+    min-height: 50vh;
+    padding: 0 10rem;
+    padding-top: 5rem;
+}
+
+.hero-desktop img {
+    margin-right: 10rem;
+}
+
+.hero-content h1,
+.hero-content p {
+    margin-top: 0;
+}
+
+.hero-content p {
+    width: 70%;
+}
+
+
+
+@media screen and (max-width: 1060px) {
+    .hero-content h1 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .mobile-container {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+
+
+
+    .arrivals {
+        min-height: 80vh;
+    }
+
+    .testimonies-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+    }
+}

@@ -4,15 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candy Store</title>
+    <link href="styles/home.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 
-<body>
-    <% items.map(item=> { %>
-        <%= item.item %>
-            <%= item.price %>
-                <%= item.quantity %>
-                    <% }); %>
-</body>
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="mobile-container">
+            <div class="hero">
+                <img src="/assets/logo.svg" alt="logo" width="300" height="300" />
+            </div>
+            <div class="intro">
+                <h1>Welcome to Jordan’s Candy!</h1>
+                <p>Step into Jordan's Candy and enter a world of sweetness! Discover an array of irresistible treats,
+                    from
+                    traditional favorites to exciting new flavors. Indulge your senses and satisfy your cravings with
+                    every
+                    visit. Come delight in the magic of Jordan's Candy today!</p>
+                <img src="/assets/home.png" alt="home" width="300" height="300" />
+                <h1>Special Event</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Nisi aliquet imperdiet a eget tortor turpis pulvinar. In in
+                    gravida nullam mattis. Arcu euismod convallis arcu nunc fringilla mi nulla. Accumsan justo
+                    pellentesque
+                    orci amet.</p>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="hero-desktop">
+                <img src="/assets/logo.svg" alt="logo" width="300" height="300" />
+                <div class="hero-content">
+                    <h1>Welcome to Jordan’s Candy!</h1>
+                    <p>Step into Jordan's Candy and enter a world of sweetness! Discover an array of irresistible
+                        treats,
+                        from
+                        traditional favorites to exciting new flavors. Indulge your senses and satisfy your cravings
+                        with
+                        every
+                        visit. Come delight in the magic of Jordan's Candy today!</p>
+                </div>
+            </div>
+
+            <div class="intro">
+                <img src="/assets/home.png" alt="home" width="300" height="300" />
+                <h1>Special Event</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Nisi aliquet imperdiet a eget tortor turpis pulvinar. In in
+                    gravida nullam mattis. Arcu euismod convallis arcu nunc fringilla mi nulla. Accumsan justo
+                    pellentesque
+                    orci amet.</p>
+            </div>
+        </div>
+
+
+        <div class="arrivals">
+            <h1>New Arrivals</h1>
+            <div class="cards">
+                <div class="card">
+                    <%- include('../partials/productcard') %>
+                </div>
+                <div class="card">
+                    <%- include('../partials/productcard') %>
+                </div>
+                <div class="card">
+                    <%- include('../partials/productcard') %>
+                </div>
+                <div class="card">
+                    <%- include('../partials/productcard') %>
+                </div>
+            </div>
+        </div>
+        <div class="testimonies">
+            <h1>Testimonies</h1>
+            <div class="testimonies-cards">
+                <div class="testimonies-card">
+                    <%- include('../partials/testimonies') %>
+                </div>
+                <div class="testimonies-card">
+                    <%- include('../partials/testimonies') %>
+                </div>
+                <div class="testimonies-card">
+                    <%- include('../partials/testimonies') %>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </html>
