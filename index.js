@@ -17,14 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-    try {
-        const result = await db.query("SELECT * FROM inventory");
-        const items = result.rows;
-        res.render("pages/index.ejs", { items });
-    } catch (err) {
-        console.error("Error fetching items from database:", err);
-        res.status(500).send("Internal Server Error");
-    }
+    res.render("pages/index.ejs");
 });
 
 app.get("/products", async (req, res) => {
