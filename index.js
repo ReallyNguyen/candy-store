@@ -7,7 +7,7 @@ const port = 3000;
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "Candy Store",
+    database: "JordansCandy",
     password: "Jordannguyen2004",
     port: 5432,
 });
@@ -18,6 +18,10 @@ app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
     res.render("pages/index.ejs");
+});
+
+app.get("/item", async (req, res) => {
+    res.render("pages/item.ejs");
 });
 
 app.get("/products", async (req, res) => {
