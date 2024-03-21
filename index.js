@@ -35,6 +35,9 @@ app.get("/products", async (req, res) => {
     }
 });
 
+app.get("/thankyou", async (req, res) => {
+    res.render("pages/ty.ejs");
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
