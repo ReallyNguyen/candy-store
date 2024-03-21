@@ -65,13 +65,15 @@
 }
 
 .testimonies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
 .testimonies-cards {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .hero-desktop {
@@ -100,6 +102,12 @@
 
 
 @media screen and (max-width: 1060px) {
+
+    .testimonies-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hero-content h1 {
         font-size: 18px;
     }
