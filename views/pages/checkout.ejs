@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/checkout.css">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs'); -%>
+        <div class="container">
+            <div class="costSummary">
+                <img href="/assets/Logo.svg" height="298" width="370">
+                <hr class="line">
+
+                <div class="costCategory">
+                    <p>Subtotal</p>
+                    <p>
+                        <% let subtotal=0 %>
+                            <% for(let item of items){%>
+                                <% subtotal +=(item.quantity * item.price) %>
+                                    <% } %>
+                                        $<%= subtotal.toFixed(2) %>
+                    </p>
+                </div>
+                <div class="costCategory">
+                    <p>Taxes</p>
+                    <p>
+                        <% let taxes=0 %>
+                            <% for(let item of items){%>
+                                <% taxes +=(item.quantity * item.price) * 0.12 %>
+                                    <% } %>
+                                        $<%= taxes.toFixed(2) %>
+                    </p>
+                </div>
+                <div class="costCategory">
+                    <p>Fees</p>
+                    <p>$99.99</p>
+                </div>
+                <div class="costCategory">
+                    <p class="total">Total</p>
+                    <p class="total">
+                        <% let total=0 %>
+                            <% for(let item of items){%>
+                                <% total +=(item.quantity * item.price)+((item.quantity * item.price) * 0.12)+99.99 %>
+                                    <% } %>
+                                        $<%= total.toFixed(2) %>
+                    </p>
+                </div>
+            </div>
+            <div class="checkoutContainer">
+                <div class="paymentContainer">
+                    <h1 class="pageTitle">Checkout</h1>
+                    <h2>Payment Method</h2>
+                    <form class="paymentForms">
+                        <div>
+                            <input type="radio" id="facecard" name="payment" />
+                            <label for="facecard">Face Card</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="swagpoints" name="payment" />
+                            <label for="swagpoints">Swag Points</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="jordancoin" name="payment" />
+                            <label for="jordancoin">Jordan Coin</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="nft" name="payment" />
+                            <label for="nft">NFT</label>
+                        </div>
+                    </form>
+
+                </div>
+                <div>
+                    <h2>Payment Details</h2>
+                    <form class="paymentDetailsContainer">
+                        <input class="textInput" type="text" id="name" placeholder="Enter your name" />
+                        <input class="textInput" type="text" id="book" placeholder="Enter your favourite book" />
+                        <div class="paymentDetailBottom">
+                            <input class="textInput" type="text" id="color" placeholder="Enter eye colour" />
+                            <input class="textInput" type="text" id="animal" placeholder="Enter shoe colour" />
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <input type="checkbox" id="lifeagreement" />
+                        <label for="lifeagreement" class="lifeAgreement">By clicking confirm, you are agreeing to sell
+                            your soul to Jordan and
+                            commit to a lifetime of supplying candy forever!! Muhahahaha!</label>
+                    </form>
+                </div>
+                <div class="confirmButton">
+                    <a href="/thankyou" class="confirmLink">
+                        Confirm Purchase
+                    </a>
+                </div>
+            </div>
+        </div>
+</body>
+
+<%- include('../partials/footer') %>
+
+</html>
