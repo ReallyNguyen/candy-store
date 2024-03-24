@@ -1,0 +1,91 @@
+.container {
+    background-color: #FFFAF9;
+    font-family: "Jua", sans-serif;
+    margin-top: 105.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pageTitle {
+    text-align: center;
+}
+
+.line {
+    min-width: 100%;
+}
+
+.costSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 330px;
+}
+
+.costCategory {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.total {
+    font-size: 24px;
+}
+
+.checkoutContainer {
+    background-color: white;
+    min-width: 342px;
+    display: flex;
+    flex-direction: column;
+    gap: 77px;
+    align-items: center;
+}
+
+.checkoutContainer>div {
+    width: 95%;
+}
+
+.paymentForms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 419px;
+}
+
+.paymentDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.paymentDetailBottom {
+    display: flex;
+    gap: 15px;
+}
+
+.textInput {
+    border: none;
+    border-bottom: 1px solid black;
+    max-width: 300px;
+}
+
+.lifeAgreement {
+    max-width: 419px;
+}
+
+.confirmButton {
+    background-color: #85C4FF;
+    margin-bottom: 60px;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.confirmLink {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}

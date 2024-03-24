@@ -1,0 +1,85 @@
+.container {
+    background-color: #FFFAF9;
+    font-family: "Jua", sans-serif;
+    margin-top: 105.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageTitle {
+    text-align: center;
+}
+
+.cartContents {
+    min-width: 345px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.itemContainer {
+    display: flex;
+    min-height: 133px;
+    max-width: 100%;
+    align-items: center;
+    gap: 12px;
+}
+
+.itemDetails {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quantityContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.quantityInput {
+    width: 20px;
+}
+
+.remove {
+    font-size: 24px;
+}
+
+.line {
+    width: 100%;
+}
+
+.costSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.costCategory {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.total {
+    font-size: 24px;
+}
+
+.checkoutButton {
+    background-color: #85C4FF;
+    margin-bottom: 60px;
+    margin-top: 32px;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.checkoutLink {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}

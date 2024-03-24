@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cart.css">
+    <title>Your Cart</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs'); -%>
+        <div class="container">
+            <h1 class="pageTitle">Your Cart</h1>
+            <div class="cartContents">
+                <% for(let item of items){%>
+                    <% let count=item.quantity %>
+                        <div class="itemContainer">
+                            <div>
+                                <img src=<%=item.link %> height="133px" width="133px">
+                            </div>
+                            <div class="itemDetails">
+                                <div class="itemText">
+                                    <h2>
+                                        <%= item.item %>
+                                    </h2>
+                                    <p>
+                                        Price: <%= item.price %>
+                                    </p>
+                                    <div class="quantityContainer">
+                                        <form action="/increase" method="post">
+                                            <input type="hidden" name="count" value="<%= item.quantity %>">
+                                            <button type="submit" name="id" value="<%= item.id %>">+</button>
+                                        </form>
+                                        <p>
+                                            <%= count %>
+                                        </p>
+                                        <form action="/decrease" method="post">
+                                            <input type="hidden" name="count" value="<%= item.quantity %>">
+                                            <button type="submit">-</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <form action=" /delete" method="post">
+                                <button class=" remove" type="submit" name="id" value="<%= item.id %>">
+                                    X
+                                </button>
+                            </form>
+
+                        </div>
+                        <% } %>
+                            <hr class="line">
+                            <div class="costSummary">
+                                <div class="costCategory">
+                                    <p>Subtotal</p>
+                                    <p>
+                                        <% let subtotal=0 %>
+                                            <% for(let item of items){%>
+                                                <% subtotal +=(item.quantity * item.price) %>
+                                                    <% } %>
+                                                        $<%= subtotal.toFixed(2) %>
+                                    </p>
+                                </div>
+                                <div class="costCategory">
+                                    <p>Taxes</p>
+                                    <p>
+                                        <% let taxes=0 %>
+                                            <% for(let item of items){%>
+                                                <% taxes +=(item.quantity * item.price) * 0.12 %>
+                                                    <% } %>
+                                                        $<%= taxes.toFixed(2) %>
+                                    </p>
+                                </div>
+                                <div class="costCategory">
+                                    <p>Fees</p>
+                                    <p>$99.99</p>
+                                </div>
+                                <div class="costCategory">
+                                    <p class="total">Total</p>
+                                    <p class="total">
+                                        <% let total=0 %>
+                                            <% for(let item of items){%>
+                                                <% total +=(item.quantity * item.price)+((item.quantity * item.price) *
+                                                    0.12)+99.99 %>
+                                                    <% } %>
+                                                        $<%= total.toFixed(2) %>
+                                    </p>
+                                </div>
+                                <div class="checkoutButton">
+                                    <a href="/checkout" class="checkoutLink">
+                                        Proceed to checkout
+                                    </a>
+                                </div>
+                            </div>
+            </div>
+
+</body>
+
+<%- include('../partials/footer') %>
+
+</html>
