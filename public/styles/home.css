@@ -99,6 +99,31 @@
     width: 70%;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 10rem;
+    height: 14rem;
+    filter: drop-shadow(0px 2.833px 2.833px rgba(0, 0, 0, 0.25));
+}
+
+.btn {
+    background-color: #85C4FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
 
 
 @media screen and (max-width: 1060px) {
@@ -126,9 +151,6 @@
 }
 
 @media (max-width: 450px) {
-
-
-
     .arrivals {
         min-height: 80vh;
     }
@@ -140,5 +162,18 @@
 
     .hero-content p {
         font-size: 10px;
+    }
+
+    .card {
+        width: 8rem;
+        height: 10rem;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 13px;
     }
 }

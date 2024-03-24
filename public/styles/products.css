@@ -8,16 +8,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    padding-top: 10rem;
     min-height: 100vh;
     background-color: #FFFAF9;
     font-family: "Jua", sans-serif;
-}
-
-.selects {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
 }
 
 .filter,
@@ -25,4 +19,62 @@
     background-color: white;
     border-radius: 5px;
     width: 5rem;
+}
+
+.productscontainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 10rem;
+    height: 12rem;
+    filter: drop-shadow(0px 2.833px 2.833px rgba(0, 0, 0, 0.25));
+}
+
+.btn {
+    background-color: #85C4FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .selects {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .card {
+        width: 8rem;
+        height: 10rem;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .productscontainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(25%, auto));
+        gap: 1rem;
+    }
 }
