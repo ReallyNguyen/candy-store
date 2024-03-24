@@ -25,13 +25,25 @@
             </select>
             <select name="sort" class="sort">
                 <option value="">Sort</option>
-                <option value="best">Best Selling</option>
                 <option value="alphabetical">Alphabetical, A-Z</option>
                 <option value="low">Price, low to high</option>
                 <option value="high">Price, high to low</option>
             </select>
         </div>
-        <%- include('../partials/productcard') %>
+        <div class="productscontainer">
+            <% items.forEach(item=> { %>
+                <div class="card">
+                    <img src="<%= item.link %>" alt="<%= item.name %>" width="100" height="100" />
+                    <h3 class="name">
+                        <%= item.item %>
+                    </h3>
+                    <h4 class="price">
+                        $<%= item.price %>
+                    </h4>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <% }); %>
+        </div>
     </div>
 
 </html>
