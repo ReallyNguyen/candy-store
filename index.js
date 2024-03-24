@@ -7,10 +7,11 @@ const port = 3000;
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "Candy Store",
-    password: "",
+    database: "JordansCandy",
+    password: "Jordannguyen2004",
     port: 5432,
 });
+
 db.connect();
 
 app.use(express.urlencoded({ extended: true }));
@@ -82,6 +83,8 @@ app.post("/decrease", async (req, res) => {
         let count = Number(req.body.count) - 1
         await db.query("UPDATE cart SET quantity = $1 WHERE id = $2", [count, id])
         res.redirect("/cart")
+        console.log("Count:", count);
+        console.log("ID:", id);
     } catch (err) {
         console.error("Error fetching items from database:", err);
         res.status(500).send("Internal Server Error");
