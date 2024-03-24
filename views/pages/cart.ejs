@@ -37,13 +37,13 @@
                                         </p>
                                         <form action="/decrease" method="post">
                                             <input type="hidden" name="count" value="<%= item.quantity %>">
-                                            <button type="submit">-</button>
+                                            <button type="submit" name="id" value="<%= item.id %>">-</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                             <form action=" /delete" method="post">
-                                <button class=" remove" type="submit" name="id" value="<%= item.id %>">
+                                <button class="remove" type="submit" name="id" value="<%= item.id %>">
                                     X
                                 </button>
                             </form>
