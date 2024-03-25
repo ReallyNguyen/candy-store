@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/item.css" />
-    <title>Items</title>
+    <link rel="stylesheet" href="/styles/item.css" />
+    <title>
+        <%= items.item %>
+    </title>
 </head>
 
 <body>
     <%- include('../partials/header.ejs'); -%>
         <div class="image-container">
-            <img src='/assets/sourPatchKids.svg' width="200" height="200" alt="sour-patch-kids" />
+            <img src='<%= items.link %>' width="200" height="200" alt="sour-patch-kids" />
         </div>
         <div class="item-info">
             <div class="info">
-                <h1 class="header">Sour Patch Kids</h1>
-                <h2 class="price">$3.99</h2>
+                <h1 class="header">
+                    <%= items.item %>
+                </h1>
+                <h2 class="price">
+                    <%= items.price %>
+                </h2>
             </div>
             <div class="quantity-controls">
                 <button class="quant-btn" onclick="increment()">+</button>
@@ -30,9 +36,14 @@
                 They are sweet and chewy and packed with Sour Patch pucker power.
                 Keep everyone satisfied when you bring all your favorite Kids to the party.
             </p>
-            <button class="add-btn">
-                ADD TO CART
-            </button>
+            <form class="card" method="post" action="/addtocart">
+                <input type="hidden" name="item" value="<%= items.item %>">
+                <input type="hidden" name="link" value="<%= items.link %>">
+                <input type="hidden" name="price" value="<%= items.price %>">
+                <button class="add-btn">
+                    ADD TO CART
+                </button>
+            </form>
         </div>
 
         <script>

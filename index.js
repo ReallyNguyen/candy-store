@@ -7,8 +7,8 @@ const port = 3000;
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "JordansCandy",
-    password: "Jordannguyen2004",
+    database: "Candy Store",
+    password: "CHANGE UR PASSWORD HEREEREREE",
     port: 5432,
 });
 
@@ -29,7 +29,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/item", async (req, res) => {
-    res.render("pages/item.ejs");
+    res.redirect('/products')
 });
 
 app.get("/products", async (req, res) => {
@@ -42,6 +42,34 @@ app.get("/products", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+
+app.post("/addtocart", async (req, res) => {
+    try {
+        let price = req.body.price
+        let link = req.body.link
+        let item = req.body.item
+
+        await db.query("INSERT INTO cart (item, price, quantity, link) VALUES($1, $2, $3, $4)", [item, price, 1, link]);
+
+        res.redirect("/products");
+    } catch (err) {
+        console.error("Error fetching items from database:", err);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+app.get("/products/:id", async (req, res) => {
+    let id = req.params.id
+
+    try {
+        const results = await db.query("SELECT * FROM inventory WHERE id = $1", [id])
+        const items = results.rows[0]
+        res.render("pages/item.ejs", { items })
+    } catch (err) {
+        console.error("Error fetching items from database:", err);
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 app.get("/cart", async (req, res) => {
     try {
