@@ -32,16 +32,21 @@
         </div>
         <div class="productscontainer">
             <% items.forEach(item=> { %>
-                <div class="card">
+                <form class="card" method="post" action="/addtocart">
                     <img src="<%= item.link %>" alt="<%= item.name %>" width="100" height="100" />
                     <h3 class="name">
-                        <%= item.item %>
+                        <a href="/products/<%= item.id %>">
+                            <%= item.item %>
+                        </a>
                     </h3>
                     <h4 class="price">
                         $<%= item.price %>
                     </h4>
+                    <input type="hidden" name="item" value="<%= item.item %>">
+                    <input type="hidden" name="link" value="<%= item.link %>">
+                    <input type="hidden" name="price" value="<%= item.price %>">
                     <button class="btn">Add to Cart</button>
-                </div>
+                </form>
                 <% }); %>
         </div>
     </div>
